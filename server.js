@@ -23,18 +23,15 @@ app.use((
     }
 });
 
-// app.use(express.static(getPath('dist/statistic-app', null)));
-//
-// // Catch-all route to serve 'index.html' from the 'dist' directory
-// app.get('*',
-//     (
-//         req,
-//         res,
-//         next
-//     ) => {
-//
-//     ;
-//     res.sendFile(getPath('dist/statistic-app', 'index.html'));
-// });
+app.use(express.static(getPath('dist/statistic-app', null)));
+
+app.get('*',
+    (
+        req,
+        res,
+        next
+    ) => {
+    res.sendFile(getPath('dist/statistic-app', 'index.html'));
+});
 
 export default app;
